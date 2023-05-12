@@ -1,0 +1,48 @@
+import random
+from random import randint
+import matplotlib
+matplotlib.use('TkAgg')
+from pylab import *
+
+n = 10
+r = 0.1
+th = 0.5
+
+class agent:  #attribute of agents' type
+    pass
+
+def initial():
+    global agents
+    agents = []
+    for i in range(n):
+        ag = agent()
+        ag.type = randint(0, 1) # type 0 or 1 for an agent
+        # x y are the spatial position of the agent 
+        ag.x = random.random() 
+        ag.y = random.random()
+        agents.append(ag)
+        
+def observe():
+    global agents
+    cla() # to clear the visualiztion space
+    white = [ag for ag in agents if ag.type == 0]
+    black = [ag for ag in agents if ag.type == 1]
+    plot([ag.x for ag in white], [ag.y for ag in white], 'wo')
+    plot([ag.x for ag in black], [ag.y for ag in black], 'ko')
+    axis('image')
+    axis([0, 1, 0, 1])
+
+    
+def update(): # update system states for one discrete time step 
+    global agents
+    ag = agents[randint(n)]
+    neighbors = [neig for neig in agents
+             if (neig.x-ag.x)**2 + (neig.y-ag.y)**2 < r**2 and neig != ag]
+    if len(neighbors) > 0:
+        q = len([neig for neig in neighbors if nb.type == ag.type]) \
+            / float(len(neighbors))
+        if q < th:
+            ag.x, ag.y = random(), random()
+
+import pycxsimulator
+otcxsimulator.GUI().start(func = [initial, observe, update])
