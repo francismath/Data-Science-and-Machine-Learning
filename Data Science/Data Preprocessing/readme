@@ -12,4 +12,7 @@ Consider this approach for countries with sufficient data: For countries like th
 3. Panel Data Methods with Missing Data:
 Consider multiple imputation: This technique involves creating multiple imputed datasets, each with different plausible values for the missing data. We can then analyze each imputed dataset and combine the results to obtain more reliable estimates.
 
-We will choose the 3rd strategy, that is, imputation method to deal with the issue of missing value.
+We will choose the 3rd strategy, that is, imputation method to deal with the issue of missing value. As for the choice of imputation technique, considering the nature of your dataset, that is, 
+missing data in undeveloped countries: This suggests a potential non-random missing data mechanism.
+Sufficient data in developed countries: This can be used to inform imputation methods that leverage the information from complete observations.
+The technique of Multiple Imputation is suitable for the dataset, as it can account for the uncertainty in the imputation process, and can handle complex patterns.
