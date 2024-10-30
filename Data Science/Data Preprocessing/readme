@@ -10,6 +10,6 @@ Treat each country as a separate time series: This approach ignores the panel st
 Consider this approach for countries with sufficient data: For countries like the US with relatively complete data, we could analyze them as individual time series.
 
 3. Panel Data Methods with Missing Data:
-Consider multiple imputation: This technique involves creating multiple imputed datasets, each with different plausible values for the missing data. You can then analyze each imputed dataset and combine the results to obtain more reliable estimates.
+Consider multiple imputation: This technique involves creating multiple imputed datasets, each with different plausible values for the missing data. We can then analyze each imputed dataset and combine the results to obtain more reliable estimates.
 
 We will choose the 3rd strategy, that is, imputation method to deal with the issue of missing value.
