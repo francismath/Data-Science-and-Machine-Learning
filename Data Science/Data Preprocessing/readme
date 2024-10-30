@@ -1,1 +1,15 @@
+In the panel data, the missing data is extensive or systematic, rather than limited and randomly distributed, since the data I have consists of values of multiple macroeconomic variables across 217 countries over 60 years. For undeveloped countries like Afghanistan, much data is missing, but for developed countries like the US, data is sufficienct, 
 
+Here are some strategies to handle missing data in this specific case:
+1. Listwise Deletion:
+Simple but potentially inefficient: Remove any observations with missing values for any of the variables.
+Not recommended for my case: This could lead to a significant loss of information, especially for countries with extensive missing data.
+
+2. Time-Series Based Approach:
+Treat each country as a separate time series: This approach ignores the panel structure and can be less powerful.
+Consider this approach for countries with sufficient data: For countries like the US with relatively complete data, we could analyze them as individual time series.
+
+3. Panel Data Methods with Missing Data:
+Consider multiple imputation: This technique involves creating multiple imputed datasets, each with different plausible values for the missing data. You can then analyze each imputed dataset and combine the results to obtain more reliable estimates.
+
+We will choose the 3rd strategy, that is, imputation method to deal with the issue of missing value.
